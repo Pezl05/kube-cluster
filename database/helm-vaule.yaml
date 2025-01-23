@@ -1,0 +1,15 @@
+##  helm repo add bitnami https://charts.bitnami.com/bitnami
+##  helm install psql-mgmt bitnami/postgresql -n project-mgmt -f helm-value.yaml
+
+auth:
+  postgresPassword: "P@ssw0rd"
+  username: "admin"
+  password: "P@ssw0rd"
+  database: "project_mgmt"
+
+volumePermissions:
+  enabled: true
+
+primary:
+  persistence:
+    existingClaim: "postgresql-pv-claim"
